@@ -1,0 +1,24 @@
+.inputSearch::placeholder {
+  padding-left: 40px;
+  text-transform: uppercase;
+  color: black;
+}
+
+.optionBis {
+  color: red;
+  visibility: hidden;
+}
+
+.ImageFigure{
+  width: 100px;
+  height: 100px;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.ImageFigure:hover{
+  -webkit-transform: scale(3);
+  transform: scale(3);
+
+}

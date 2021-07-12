@@ -1,0 +1,41 @@
+input[type='range'].custom-slider {
+  -webkit-appearance: none; /*nécessaire pour Chrome */
+  padding: 0; /* nécessaire pour IE */
+  font: inherit; /* même rendu suivant font document */
+  color: red; /* sert pour couleur de référence, via currentColor, pour le curseur */
+  opacity: 1;
+  background: #011627; /* sert pour couleur de fond de la zone de déplacement */
+  box-sizing: border-box; /* même modèle de boîte pour tous */
+  transition: opacity 0.2s;
+}
+input[type='range'].custom-slider::-webkit-slider-thumb {
+  width: 1em;
+  height: inherit; /* s'adapte à la hauteur de l'input */
+  border: none;
+  border-radius: 0; /* pris en compte sur Webkit et Edge */
+}
+.aws-btn {
+  --slider-height-percentage: 60%;
+  --slider-transition-duration: 700ms;
+  --organic-arrow-thickness: 4px;
+  --organic-arrow-border-radius: 0px;
+  --organic-arrow-height: 40px;
+  --organic-arrow-color: #041a4e;
+  --control-button-width: 12%;
+  --control-button-height: 25%;
+  --control-button-background: transparent;
+  --control-bullet-color: #041a4e;
+  --control-bullet-active-color: #0fffef;
+  --loader-bar-color: #38ffe8;
+  --loader-bar-height: 6px;
+}
+
+.imagebis {
+  -webkit-filter: grayscale(20%);
+  filter: grayscale(20%);
+  transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.imagebis:hover {
+  -webkit-filter: grayscale(0%);
+  filter: grayscale(0%);
+}

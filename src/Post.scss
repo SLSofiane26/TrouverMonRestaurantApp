@@ -1,0 +1,20 @@
+.imagePost {
+  transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.imagePost:hover {
+  -webkit-transform: scale(1.3);
+  transform: scale(1.3);
+}
+input[type='range'].custom-slider {
+  -webkit-appearance: none; /*nécessaire pour Chrome */
+  padding: 0; /* nécessaire pour IE */
+  font: inherit; /* même rendu suivant font document */
+  outline: none;
+  color: #41ead4; /* sert pour couleur de référence, via currentColor, pour le curseur */
+  opacity: 0.8;
+  background: #011627; /* sert pour couleur de fond de la zone de déplacement */
+  box-sizing: border-box; /* même modèle de boîte pour tous */
+  transition: opacity 0.2s;
+  cursor: progress;
+}
