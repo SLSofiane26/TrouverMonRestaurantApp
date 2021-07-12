@@ -88,7 +88,6 @@ let GoogleMapRestaurant = memo(function GoogleMapRestaurant(props) {
     <Fragment>
       <div style={{ width: '50vw' }}>
         <MapVilleDBis
-          googleMapURL='https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyC-a0RiQapPANGhV1cXGxPw4x7-_JiAnN0'
           loadingElement={<div style={{ height: `100%` }} />}
           containerElement={<div style={{ height: '100vh' }} />}
           mapElement={<div style={{ height: `100%` }} />}
