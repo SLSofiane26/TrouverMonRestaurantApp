@@ -1,7 +1,7 @@
-import React, { createContext, Fragment, PureComponent } from 'react';
-import { connect } from 'react-redux';
-import { withRouter } from 'react-router';
-import * as ACTIONS from './ActionsLogin.js';
+import React, { createContext, Fragment, PureComponent } from "react";
+import { connect } from "react-redux";
+import { withRouter } from "react-router";
+import * as ACTIONS from "./ActionsLogin.js";
 
 let RestaurantContext = createContext();
 

@@ -1,12 +1,12 @@
-import React, { Fragment, memo, useState } from 'react';
+import React, { Fragment, memo, useState } from "react";
 import {
   GoogleMap,
   InfoWindow,
   Marker,
   withGoogleMap,
   withScriptjs,
-} from 'react-google-maps';
-import MapStyle from './MapStyle';
+} from "react-google-maps";
+import MapStyle from "./MapStyle";
 
 let MapVilleD = memo(function MapVilleD(props) {
   let [state, setState] = useState(null);
@@ -47,24 +47,24 @@ let MapVilleD = memo(function MapVilleD(props) {
                       lng: items.gps_long,
                     }}
                   >
-                    <div style={{ textAlign: 'center' }}>
+                    <div style={{ textAlign: "center" }}>
                       <h1>{items.name}</h1>
                       <p>
                         {items.address} | {items.zipcode} | {items.country}
-                      </p>{' '}
-                      <p>Tél : {items.phone}</p>{' '}
-                      <p style={{ color: ' #011627' }}>
-                        {' '}
+                      </p>{" "}
+                      <p>Tél : {items.phone}</p>{" "}
+                      <p style={{ color: " #011627" }}>
+                        {" "}
                         (TripAdvisor) : {items.trip_advisor_avg_rating} / 5
                       </p>
-                      <p style={{ color: ' #011627' }}>
-                        Nombre de commentaires :{' '}
+                      <p style={{ color: " #011627" }}>
+                        Nombre de commentaires :{" "}
                         {items.trip_advisor_review_count}
                       </p>
                       <img
-                        alt={items.pics_main['240x135']}
-                        src={items.pics_main['240x135']}
-                        style={{ width: '300px', height: '200px' }}
+                        alt={items.pics_main["240x135"]}
+                        src={items.pics_main["240x135"]}
+                        style={{ width: "300px", height: "200px" }}
                       />
                       <p>Venir : {items.transport}</p>
                       <p>Cuisine : {items.speciality}</p>
@@ -84,13 +84,15 @@ let MapVilleD = memo(function MapVilleD(props) {
 let MapVilleDBis = withScriptjs(withGoogleMap(MapVilleD));
 
 let GoogleMapRestaurant = memo(function GoogleMapRestaurant(props) {
+  console.log("hello");
   return (
     <Fragment>
-      <div style={{ width: '50vw' }}>
+      <div style={{ width: "50vw" }}>
         <MapVilleDBis
           loadingElement={<div style={{ height: `100%` }} />}
-          containerElement={<div style={{ height: '100vh' }} />}
+          containerElement={<div style={{ height: "100vh" }} />}
           mapElement={<div style={{ height: `100%` }} />}
+          googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyDNn9x1XCVMaeTSlw5T1vtWDaUQXsXej7c&v=3.exp&libraries=geometry,drawing,places"
           data={props.data}
         />
       </div>

@@ -1,34 +1,34 @@
-import Axios from './AxiosInstance';
+import Axios from "./AxiosInstance";
 
 export let FETCHBIS = (data) => (dispatch) => {
   dispatch({
-    type: 'BISSTART',
+    type: "BISSTART",
   });
   Axios({
-    method: 'GET',
-    url: '/locations/list',
+    method: "GET",
+    url: "/locations/list",
     params: {
       google_place_id: data,
     },
   })
-    .then((res) => dispatch({ type: 'BISSUCCES', payload: { data: res.data } }))
-    .catch((err) => dispatch({ type: 'BISFAILED', payload: { data: err } }));
+    .then((res) => dispatch({ type: "BISSUCCES", payload: { data: res.data } }))
+    .catch((err) => dispatch({ type: "BISFAILED", payload: { data: err } }));
 };
 
 export let FETCHVILLE = (data) => (dispatch) => {
   dispatch({
-    type: 'STARTVILLE',
+    type: "STARTVILLE",
   });
   Axios({
-    method: 'GET',
-    url: '/locations/auto-complete',
+    method: "GET",
+    url: "/locations/auto-complete",
     params: {
       text: data,
     },
   })
     .then((response) => {
       dispatch({
-        type: 'VILLE',
+        type: "VILLE",
         payload: {
           data: response.data,
         },
@@ -36,7 +36,7 @@ export let FETCHVILLE = (data) => (dispatch) => {
     })
     .catch((error) => {
       dispatch({
-        type: 'FAILEDVILLE',
+        type: "FAILEDVILLE",
         payload: {
           data: error,
         },
@@ -46,35 +46,35 @@ export let FETCHVILLE = (data) => (dispatch) => {
 
 export let FETCHRESTAURANT = (data) => async (dispatch) => {
   dispatch({
-    type: 'STARTRESTAURANT',
+    type: "STARTRESTAURANT",
   });
   Axios({
-    method: 'GET',
-    url: '/restaurants/auto-complete',
+    method: "GET",
+    url: "/restaurants/auto-complete",
     params: {
       text: data,
     },
   })
     .then((res) =>
-      dispatch({ type: 'RESTAURANT', payload: { data: res.data } })
+      dispatch({ type: "RESTAURANT", payload: { data: res.data } })
     )
     .catch((err) =>
-      dispatch({ type: 'FAILEDRESTAURANT', payload: { data: err } })
+      dispatch({ type: "FAILEDRESTAURANT", payload: { data: err } })
     );
 };
 
 export let FETCHRESTAURANTLISTE = (data, bis) => async (dispatch) => {
-  dispatch({ type: 'VILLESTART' });
+  dispatch({ type: "VILLESTART" });
   Axios({
-    method: 'GET',
-    url: '/restaurants/list',
+    method: "GET",
+    url: "/restaurants/list",
     params: {
       queryPlaceValueCityId: data,
       pageNumber: bis,
     },
   })
     .then((res) => {
-      dispatch({ type: 'VILLESUCCES', payload: { data: res.data } });
+      dispatch({ type: "VILLESUCCES", payload: { data: res.data } });
     })
     .catch((err) => console.error(err));
 };

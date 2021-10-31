@@ -1,13 +1,13 @@
-import React, { Fragment, memo, useState } from 'react';
+import React, { Fragment, memo, useState } from "react";
 import {
   GoogleMap,
   InfoWindow,
   Marker,
   withGoogleMap,
   withScriptjs,
-} from 'react-google-maps';
-import { useSelector } from 'react-redux';
-import MapStyle from './MapStyle.js';
+} from "react-google-maps";
+import { useSelector } from "react-redux";
+import MapStyle from "./MapStyle.js";
 
 let VillMapP = memo(function VillMapP(props) {
   let data = useSelector((state) => state.resto.villeDescBis);
@@ -36,7 +36,7 @@ let VillMapP = memo(function VillMapP(props) {
               scaledSize: new window.google.maps.Size(50, 50),
             }}
             onClick={() => setState(items)}
-          />{' '}
+          />{" "}
           {state && (
             <InfoWindow
               position={{
@@ -64,12 +64,12 @@ let PrincipalVilleMap = memo(function PrincipalVilleMap(props) {
     <Fragment>
       <div
         style={{
-          width: '100vw',
-          zIndex: '100',
+          width: "100vw",
+          zIndex: "100",
         }}
       >
         <PGoogleMap
-          googleMapURL='https://maps.googleapis.com/maps/api/js?key=AIzaSyC4UKzrTZtx-M7aYDJFExvvt39iewtlFJ8&v=3.exp&libraries=geometry,drawing,places'
+          googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyDNn9x1XCVMaeTSlw5T1vtWDaUQXsXej7c&v=3.exp&libraries=geometry,drawing,places"
           loadingElement={<div style={{ height: `100%` }} />}
           containerElement={<div style={{ height: `30vh` }} />}
           mapElement={<div style={{ height: `100%` }} />}

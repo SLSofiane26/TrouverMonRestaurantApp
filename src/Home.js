@@ -1,12 +1,12 @@
-import React, { Fragment, PureComponent } from 'react';
-import { connect } from 'react-redux';
-import { withRouter } from 'react-router';
-import Search from './Search';
-import Video from './Video';
-import * as ACT from './RestaurantActions';
-import Spinner from './Components/Spinner';
-import { Helmet } from 'react-helmet';
-import './Style.css';
+import React, { Fragment, PureComponent } from "react";
+import { connect } from "react-redux";
+import { withRouter } from "react-router";
+import Search from "./Search";
+import Video from "./Video";
+import * as ACT from "./RestaurantActions";
+import Spinner from "./Components/Spinner";
+import { Helmet } from "react-helmet";
+import "./Style.css";
 
 class Home extends PureComponent {
   constructor(props) {
@@ -17,8 +17,8 @@ class Home extends PureComponent {
       restaurantload: false,
       ville: null,
       villeData: [],
-      resto: '',
-      state: '',
+      resto: "",
+      state: "",
       id: null,
     };
     this.handleChange = this.handleChange.bind(this);
@@ -29,25 +29,25 @@ class Home extends PureComponent {
     let d = e.target.value;
 
     switch (target) {
-      case 'RESTO':
+      case "RESTO":
         if (d) {
           this.setState((prevState) => ({
             resto: d,
           }));
         } else {
           this.setState((prevState) => ({
-            resto: '',
+            resto: "",
           }));
         }
         break;
-      case 'VILLE':
+      case "VILLE":
         if (d) {
           this.setState((prevState) => ({
             state: d,
           }));
         } else {
           this.setState((prevState) => ({
-            state: '',
+            state: "",
           }));
         }
         break;
@@ -105,17 +105,17 @@ class Home extends PureComponent {
     return (
       <Fragment>
         <Helmet>
-          <meta name='author' content='trouver mon restaurant' />
-          <meta name='description' content='trouver votre restaurant' />
+          <meta name="author" content="trouver mon restaurant" />
+          <meta name="description" content="trouver votre restaurant" />
           <title>TrouverMonRestaurant || Accueil</title>
-        </Helmet>{' '}
+        </Helmet>{" "}
         {this.props.loading ? (
           <div
             style={{
-              position: 'fixed',
-              zIndex: '10',
-              width: '100vw',
-              justifyContent: 'center',
+              position: "fixed",
+              zIndex: "10",
+              width: "100vw",
+              justifyContent: "center",
             }}
           >
             <Spinner />
@@ -123,26 +123,26 @@ class Home extends PureComponent {
         ) : null}
         <div
           style={{
-            display: 'flex',
-            position: 'fixed',
-            width: '100vw',
-            zIndex: '40',
-            color: 'white',
-            fontSize: '3em',
-            justifyContent: 'center',
+            display: "flex",
+            position: "fixed",
+            width: "100vw",
+            zIndex: "40",
+            color: "white",
+            fontSize: "3em",
+            justifyContent: "center",
           }}
         >
           <h1
             style={{
-              textAlign: 'center',
-              margin: '0px',
-              background: '#011627',
-              borderRadius: '1vw',
-              marginTop: '30vh',
-              border: '10px double #41EAD4',
-              padding: '1vw',
-              zIndex: '0',
-              position: 'fixed',
+              textAlign: "center",
+              margin: "0px",
+              background: "#011627",
+              borderRadius: "1vw",
+              marginTop: "30vh",
+              border: "10px double #41EAD4",
+              padding: "1vw",
+              zIndex: "0",
+              position: "fixed",
             }}
           >
             TrouverMonRestaurant
@@ -151,23 +151,23 @@ class Home extends PureComponent {
         <Video />
         <div
           style={{
-            width: '100vw',
-            display: 'flex',
-            position: 'fixed',
-            justifyContent: 'center',
-            marginTop: '10vh',
-            border: 'none',
+            width: "100vw",
+            display: "flex",
+            position: "fixed",
+            justifyContent: "center",
+            marginTop: "10vh",
+            border: "none",
           }}
         >
           <div
             style={{
-              width: '100vw',
-              justifyContent: 'center',
-              flexDirection: 'row',
-              display: 'flex',
-              position: 'fixed',
-              marginTop: '45vh',
-              zIndex: '100',
+              width: "100vw",
+              justifyContent: "center",
+              flexDirection: "row",
+              display: "flex",
+              position: "fixed",
+              marginTop: "45vh",
+              zIndex: "100",
             }}
           >
             <Search
@@ -177,88 +177,88 @@ class Home extends PureComponent {
           </div>
           <div
             style={{
-              width: '100vw',
-              display: 'flex',
-              justifyContent: 'center',
+              width: "100vw",
+              display: "flex",
+              justifyContent: "center",
             }}
           >
             <div
               style={{
-                width: '50vw',
-                justifyContent: 'space-evenly',
-                display: 'flex',
-                flexDirection: 'row',
+                width: "50vw",
+                justifyContent: "space-evenly",
+                display: "flex",
+                flexDirection: "row",
               }}
             >
               {this.state.restaurantData.length > 0 ? (
                 <div
                   style={{
-                    marginTop: '45vh',
+                    marginTop: "45vh",
                   }}
                 >
-                  {' '}
+                  {" "}
                   <div>
                     <select
                       style={{
-                        width: '30vw',
-                        background: '#011627',
-                        color: '#41EAD4',
-                        marginTop: '10vh',
-                        zIndex: '1000',
-                        border: 'none',
-                        height: '5vh',
-                        paddingLeft: '2%',
-                        textTransform: 'uppercase',
-                        fontSize: '1em',
-                        display: this.props.error !== null ? 'none' : 'flex',
+                        width: "30vw",
+                        background: "#011627",
+                        color: "#41EAD4",
+                        marginTop: "10vh",
+                        zIndex: "1000",
+                        border: "none",
+                        height: "5vh",
+                        paddingLeft: "2%",
+                        textTransform: "uppercase",
+                        fontSize: "1em",
+                        display: this.props.error !== null ? "none" : "flex",
                       }}
-                      onChange={(e) => this.changeSelect(e, 'RESTO')}
+                      onChange={(e) => this.changeSelect(e, "RESTO")}
                     >
-                      {' '}
-                      <option value=''>Selectionner une restaurant</option>
+                      {" "}
+                      <option value="">Selectionner une restaurant</option>
                       {this.state.restaurantData.map((items, index) => {
                         return (
                           <option
-                            className='optionBis'
+                            className="optionBis"
                             value={items.id}
                             key={index}
                           >
-                            {items.name.text} | {items.zipCode} |{' '}
+                            {items.name.text} | {items.zipCode} |{" "}
                             {items.cityName} | {items.countryName}
                           </option>
                         );
                       })}
-                    </select>{' '}
+                    </select>{" "}
                   </div>
                 </div>
               ) : null}
               {this.state.villeData.length > 0 ? (
                 <div
                   style={{
-                    marginTop: '45vh',
-                    zIndex: '50',
+                    marginTop: "45vh",
+                    zIndex: "50",
                   }}
                 >
-                  {' '}
+                  {" "}
                   <div>
                     <select
                       style={{
-                        width: '30vw',
-                        marginLeft: '5px',
-                        background: '#011627',
-                        color: '#41EAD4',
-                        marginTop: '10vh',
-                        border: 'none',
-                        height: '5vh',
-                        paddingLeft: '2%',
-                        textTransform: 'uppercase',
-                        fontSize: '1em',
-                        display: this.props.error !== null ? 'none' : 'flex',
+                        width: "30vw",
+                        marginLeft: "5px",
+                        background: "#011627",
+                        color: "#41EAD4",
+                        marginTop: "10vh",
+                        border: "none",
+                        height: "5vh",
+                        paddingLeft: "2%",
+                        textTransform: "uppercase",
+                        fontSize: "1em",
+                        display: this.props.error !== null ? "none" : "flex",
                       }}
-                      onChange={(e) => this.changeSelect(e, 'VILLE')}
+                      onChange={(e) => this.changeSelect(e, "VILLE")}
                     >
-                      {' '}
-                      <option value=''>Selectionner une ville</option>
+                      {" "}
+                      <option value="">Selectionner une ville</option>
                       {this.state.villeData.map((items, index) => {
                         return (
                           <option key={index} value={items.id.id}>
@@ -266,68 +266,70 @@ class Home extends PureComponent {
                           </option>
                         );
                       })}
-                    </select>{' '}
+                    </select>{" "}
                   </div>
                 </div>
               ) : null}
             </div>
           </div>
-        </div>{' '}
+        </div>{" "}
         <div
-          style={{ width: '100vw', justifyContent: 'center', display: 'flex' }}
+          style={{ width: "100vw", justifyContent: "center", display: "flex" }}
         >
-          <div
-            style={{
-              width: '50vw',
-              display: 'flex',
-              zIndex: '100',
-              marginTop: '75vh',
-              justifyContent: 'center',
-            }}
-          >
-            {this.state.resto ? (
-              <div>
-                <button
-                  style={{
-                    width: '10vw',
-                    height: '10vh',
-                    color: 'white',
-                    background: '#011627',
-                    border: '1px solid #41EAD4',
-                    borderRadius: '10px',
-                  }}
-                  onClick={() => {
-                    this.props.history.push({
-                      pathname: '/restaurant/' + this.state.resto,
-                    });
-                  }}
-                >
-                  Voir ce restaurant
-                </button>
-              </div>
-            ) : null}{' '}
-            {this.state.state ? (
-              <div>
-                <button
-                  style={{
-                    width: '10vw',
-                    height: '10vh',
-                    color: 'white',
-                    background: '#011627',
-                    border: '1px solid #41EAD4',
-                    borderRadius: '10px',
-                  }}
-                  onClick={() =>
-                    this.props.history.push({
-                      pathname: '/ville/' + this.state.state,
-                    })
-                  }
-                >
-                  Voir les restaurants de cette ville
-                </button>
-              </div>
-            ) : null}
-          </div>
+          {localStorage.getItem("token") ? (
+            <div
+              style={{
+                width: "50vw",
+                display: "flex",
+                zIndex: "100",
+                marginTop: "75vh",
+                justifyContent: "center",
+              }}
+            >
+              {this.state.resto ? (
+                <div>
+                  <button
+                    style={{
+                      width: "10vw",
+                      height: "10vh",
+                      color: "white",
+                      background: "#011627",
+                      border: "1px solid #41EAD4",
+                      borderRadius: "10px",
+                    }}
+                    onClick={() => {
+                      this.props.history.push({
+                        pathname: "/restaurant/" + this.state.resto,
+                      });
+                    }}
+                  >
+                    Voir ce restaurant
+                  </button>
+                </div>
+              ) : null}{" "}
+              {this.state.state ? (
+                <div>
+                  <button
+                    style={{
+                      width: "10vw",
+                      height: "10vh",
+                      color: "white",
+                      background: "#011627",
+                      border: "1px solid #41EAD4",
+                      borderRadius: "10px",
+                    }}
+                    onClick={() =>
+                      this.props.history.push({
+                        pathname: "/ville/" + this.state.state,
+                      })
+                    }
+                  >
+                    Voir les restaurants de cette ville
+                  </button>
+                </div>
+              ) : null}
+            </div>
+          ) : null}
         </div>
       </Fragment>
     );

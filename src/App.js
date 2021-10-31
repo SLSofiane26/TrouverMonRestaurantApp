@@ -1,17 +1,17 @@
-import React, { Fragment, lazy, memo, Suspense } from 'react';
-import { Redirect, Route, Switch } from 'react-router';
-import './App.css';
-import Spinner from './Components/Spinner';
-import Layout from './Layout';
-import * as LINK from './Link';
-import MonRestaurant from './MonRestaurant';
+import React, { Fragment, lazy, memo, Suspense } from "react";
+import { Redirect, Route, Switch } from "react-router";
+import "./App.css";
+import Spinner from "./Components/Spinner";
+import Layout from "./Layout";
+import * as LINK from "./Link";
+import MonRestaurant from "./MonRestaurant";
 
-let Home = lazy(() => import('./Home.js'));
-let Connexion = lazy(() => import('./Connexion.js'));
-let Register = lazy(() => import('./Inscription.js'));
-let Logout = lazy(() => import('./Logout.js'));
-let ContextRestaurant = lazy(() => import('./ContextRestaurant.js'));
-let Ville = lazy(() => import('./Ville.js'));
+let Home = lazy(() => import("./Home.js"));
+let Connexion = lazy(() => import("./Connexion.js"));
+let Register = lazy(() => import("./Inscription.js"));
+let Logout = lazy(() => import("./Logout.js"));
+let ContextRestaurant = lazy(() => import("./ContextRestaurant.js"));
+let Ville = lazy(() => import("./Ville.js"));
 
 let App = memo(function App(props) {
   return (
@@ -19,12 +19,11 @@ let App = memo(function App(props) {
       <Switch>
         <MonRestaurant>
           <Layout>
-            {' '}
-            <Redirect from='/' to="/home"/>
+            {" "}
+            <Redirect from="/" to="/home" />
             <Switch>
-
               <Route
-                path={'/ville/:id'}
+                path={"/ville/:id"}
                 exact
                 render={() => (
                   <Suspense fallback={<Spinner />}>
@@ -33,7 +32,7 @@ let App = memo(function App(props) {
                 )}
               />
               <Route
-                path={'/restaurant/:id'}
+                path={"/restaurant/:id"}
                 exact
                 render={() => (
                   <Suspense fallback={<Spinner />}>
@@ -76,21 +75,21 @@ let App = memo(function App(props) {
                     <Logout />
                   </Suspense>
                 )}
-              />{' '}
+              />{" "}
               <Route
                 render={() => (
                   <div
                     style={{
-                      width: '100vw',
-                      display: 'flex',
-                      height: '100vh',
-                      position: 'fixed',
-                      background: '#011627',
-                      justifyContent: 'center',
-                      color: 'white',
+                      width: "100vw",
+                      display: "flex",
+                      height: "100vh",
+                      position: "fixed",
+                      background: "#011627",
+                      justifyContent: "center",
+                      color: "white",
                     }}
                   >
-                    <h1 style={{ marginTop: '30vh', fontSize: '5em' }}>
+                    <h1 style={{ marginTop: "30vh", fontSize: "5em" }}>
                       404 AUCUNE PAGE
                     </h1>
                   </div>

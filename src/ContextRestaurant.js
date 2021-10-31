@@ -1,7 +1,7 @@
-import React, { Fragment, PureComponent } from 'react';
-import { withRouter } from 'react-router';
-import { ContextR } from './ContextRestaurantTool';
-import Restaurant from './Restaurant';
+import React, { Fragment, PureComponent } from "react";
+import { withRouter } from "react-router";
+import { ContextR } from "./ContextRestaurantTool";
+import Restaurant from "./Restaurant";
 
 class ContextRestaurant extends PureComponent {
   constructor(props) {
@@ -9,6 +9,7 @@ class ContextRestaurant extends PureComponent {
     this.state = {};
   }
   componentDidMount = () => {};
+
   componentDidUpdate = (prevState, prevProps) => {};
 
   render() {
